@@ -24,6 +24,7 @@
 #include <string>
 #include <cstdlib>
 #include <conio.h>
+#include <bits/stdc++.h>
 
 using namespace std;
 
@@ -82,13 +83,20 @@ int main() {
   // printf("\n\nsenha: %s", password);
 
   if (login == ROOT_LOGIN && password == ROOT_PASSWORD) {
-    printf("\n\n\n*  Welcome To BWC! \n\nvocê está logado como %s\n", login); 
+    string str = "gcc ";
+    const char *command; 
+    printf("\n\n\n\n\n*  Welcome To Project Barca v0.1.0-beta\n\n\nVocê está logado como %s\n", login); 
 
-    cout << "Qual ferramenta deseja instalar?\n\n[1] Barca CLI\n[2] Barca Web Cloud\n[3] Mamute Security\n\n\n[0]Sair" << endl;
+    cout << "\n? O que deseja instalar?\n\n[1] Barca Full\n[2] Barca Web Cloud\n[3] Mamute Security\n\n\n[0]Sair" << endl;
     cin >> option;
     switch (option) {
       case 1:
-        cout << "Instalando Barca CLI..." << endl;
+        str = str + " tools-installer.c -o full-setup";
+        command = str.c_str();
+        cout << "Preparando a instalação " << command << endl;
+        system(command);
+        cout << "\nInstalando barca" << endl;
+        system("full-setup.exe");
         system("pause");
         break;
       case 2:
